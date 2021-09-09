@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_img"
+    android:alpha="0.85">
+
+    <RelativeLayout
+        android:id="@+id/child_rel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchBoxCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="50dp">
+
+            <EditText
+                android:id="@+id/searchBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="25dp"
+                android:textCursorDrawable="@drawable/button_bg"
+                android:hint="Search Location"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="18sp"
+                android:textStyle="italic"
+                android:backgroundTint="@color/black" />
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/searchBoxCard"
+            android:layout_marginTop="20dp"
+            android:alpha="0.9"
+            android:background="@drawable/button_bg"
+            android:text="Get Weather"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:layout_marginHorizontal="35dp"/>
+
+        <TextView
+            android:id="@+id/textHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="380dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Weather Report"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/itemCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textHead"
+            android:alpha="0.8"
+            android:background="@color/white"
+            android:padding="15dp"
+            android:translationY="-5dp"
+            android:translationZ="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/location_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--Location-->
+                    <TextView
+                        android:id="@+id/location_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Location:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/location_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="right"
+                        android:text="--"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/temp_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--Temperature-->
+                    <TextView
+                        android:id="@+id/temp_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Temperature:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/temp_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="right"
+                        android:text="--"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/windSpeed_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--wind speed-->
+                    <TextView
+                        android:id="@+id/windSpeed_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Wind Speed:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/windSpeed_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="right"
+                        android:text="--"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+                <!--humidity-->
+                <LinearLayout
+                    android:id="@+id/humidity_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--wind speed-->
+                    <TextView
+                        android:id="@+id/humidity_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Humidity:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/humidity_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="right"
+                        android:text="--"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pressure_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <!--wind speed-->
+                    <TextView
+                        android:id="@+id/pressure_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="Pressure:"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/pressure_val"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:gravity="right"
+                        android:text="--"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/logo" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
